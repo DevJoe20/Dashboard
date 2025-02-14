@@ -13,18 +13,28 @@ import Sneakers from '../assets/Sneakers.jpeg'
 import DenimJeans from '../assets/Denim Jeans.jpeg'
 import Cap from '../assets/Cap.jpeg'
 import Backpack from '../assets/Backpack.jpeg'
+import pick from '../assets/pick.png'
+import bin from '../assets/bin.png'
 import { Pencil, Trash } from "lucide-react";
 import Modal from "./Modal";
+import Modal1 from './Modal1';
+import Modal2 from './Modal2'
+
 
 
 const Dashboard = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    // const [isModal1Open, setIsModal1Open] = useState(false);
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+    const [openPopup, setOpenPopup] = useState (false)
+
+
 
   return (
     <>
-
     <div className="dashboard">
       <div className="dash-header">
         <img src={bell} alt="Notifications" />
@@ -69,6 +79,7 @@ const Dashboard = () => {
                 <th>Price</th>
                 <th>Location</th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -79,9 +90,11 @@ const Dashboard = () => {
                 <td>10</td>
                 <td>199.99 Php</td>
                 <td>Talavera</td>
-                <td className="icon-container">
-                   <Pencil className="icon edit-icon" />
-                   <Trash className="icon delete-icon" />
+                <td className='icon-container'>
+                  <img src={pick} alt="" onClick={() => setIsDialogOpen(true)}/>
+                  </td>
+                <td className='icon-container'>
+                  <img src={bin} alt="" onClick={() => setOpenPopup(true)}/>
                 </td>
               </tr>
             </tbody>
@@ -93,10 +106,8 @@ const Dashboard = () => {
                 <td>25</td>
                 <td>259.99 Php</td>
                 <td>Cabanatuan</td>
-                <td className="icon-container">
-                   <Pencil className="icon edit-icon" />
-                   <Trash className="icon delete-icon" />
-                </td>
+                <td className='icon-container'><img src={pick} alt="" /></td>
+                <td className='icon-container'><img src={bin} alt="" /></td>
               </tr>
             </tbody>
             <tbody>
@@ -107,10 +118,8 @@ const Dashboard = () => {
                 <td>15</td>
                 <td>299.99 Php</td>
                 <td>Manila</td>
-                <td className="icon-container">
-                   <Pencil className="icon edit-icon" />
-                   <Trash className="icon delete-icon" />
-                </td>
+                <td className='icon-container'><img src={pick} alt="" /></td>
+                <td className='icon-container'><img src={bin} alt="" /></td>
               </tr>
             </tbody>
             <tbody>
@@ -121,10 +130,8 @@ const Dashboard = () => {
                 <td>20</td>
                 <td>799.99 Php</td>
                 <td>Quezon City</td>
-                <td className="icon-container">
-                   <Pencil className="icon edit-icon" />
-                   <Trash className="icon delete-icon" />
-                </td>
+                <td className='icon-container'><img src={pick} alt="" /></td>
+                <td className='icon-container'><img src={bin} alt="" /></td>
               </tr>
             </tbody>
             <tbody>
@@ -135,9 +142,9 @@ const Dashboard = () => {
                 <td>12</td>
                 <td>499.99 Php</td>
                 <td>Makati</td>
+                <td className='icon-container'><img src={pick} alt="" /></td>
+                <td className='icon-container'><img src={bin} alt="" /></td>
                 <td className="icon-container">
-                   <Pencil className="icon edit-icon" />
-                   <Trash className="icon delete-icon" />
                 </td>
               </tr>
             </tbody>
@@ -149,10 +156,8 @@ const Dashboard = () => {
                 <td>30</td>
                 <td>149.99 Php</td>
                 <td>Pampanga</td>
-                <td className="icon-container">
-                   <Pencil className="icon edit-icon" />
-                   <Trash className="icon delete-icon" />
-                </td>
+                <td className='icon-container'><img src={pick} alt="" /></td>
+                <td className='icon-container'><img src={bin} alt="" /></td>
               </tr>
             </tbody>
             <tbody>
@@ -163,9 +168,11 @@ const Dashboard = () => {
                 <td>18</td>
                 <td>1599.99 Php</td>
                 <td>Baguio</td>
-                <td className="icon-container">
-                   <Pencil className="icon edit-icon" />
-                   <Trash className="icon delete-icon" />
+                <td className='icon-container' onClick={() =>setIsDialogOpen(true)}>
+                  <img src={pick} alt="" />
+                </td>
+                <td className='icon-container'>
+                  <img src={bin} alt="" />
                 </td>
               </tr>
             </tbody>
@@ -186,8 +193,11 @@ const Dashboard = () => {
     </div>
 
     <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+    <Modal1 isOpen={isDialogOpen} onClose={() => setIsDialogOpen(false)} />
+    <Modal2 isOpen={openPopup} onClose={() => setOpenPopup(false)}/>
+
     </>
   )
 }
 
-export default Dashboard
+export default Dashboard;

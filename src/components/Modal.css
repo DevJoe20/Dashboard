@@ -1,0 +1,88 @@
+/* Modal Overlay */
+.modal-overlay-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content Box */
+.modal-content-1 {
+    display: flex;
+    background: #1c1c1e; 
+    color: white;
+    width: 60%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Left Side - Image */
+.left-modal {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+}
+
+.left-modal img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+}
+
+/* Right Side - Product Details */
+.product-details {
+    width: 50%;
+    padding: 20px;
+}
+
+.product-details h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Product Details Styling */
+.product-details p {
+    /* padding-top: 7rem; */
+    font-size: 14px;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+.label {
+    font-weight: bold;
+    color: #aaa;
+}
+
+/* Close Button */
+.closebtn {
+    position: absolute;
+    /* top: 30%; */
+    right: 21%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: red;
+}
